@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class GestorDeArchivos {
 
-    private static final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    private static final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern(Colores.NEGRITA + "dd/MM/yyyy HH:mm:ss");
 
     public static void guardarEnArchivoHistorial(String conversionRealizada) {
         try {
@@ -17,9 +17,9 @@ public class GestorDeArchivos {
             FileWriter writer = new FileWriter(file, true);
             writer.write(conversionRealizada + '\n');
             writer.close();
-            System.out.println("Se guardó en el historial.");
+            System.out.println(Colores.VERDE + "Se guardó en el historial." + Colores.RESET);
         } catch (Exception e) {
-            System.out.println("Error al guardar en el historial.");
+            System.out.println(Colores.ROJO + "Error al guardar en el historial.");
             e.printStackTrace();
         }
     }
@@ -36,7 +36,7 @@ public class GestorDeArchivos {
 
             scanner.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Archivo de historial no encontrado.");
+            System.out.println(Colores.ROJO+ "Archivo de historial no encontrado.");
         }
     }
 
@@ -47,11 +47,11 @@ public class GestorDeArchivos {
             LocalDateTime ahora = LocalDateTime.now();
             String fechaFormateada = ahora.format(FORMATO_FECHA);
 
-            writer.write(conversionRealizada + " | Fecha: " + fechaFormateada + '\n');
+            writer.write(Colores.NEGRITA + conversionRealizada + " | Fecha: " + fechaFormateada + '\n');
             writer.close();
-            System.out.println("Registro con marca de tiempo guardado.");
+            System.out.println(Colores.VERDE + "Registro con marca de tiempo guardado." + Colores.RESET);
         } catch (Exception e) {
-            System.out.println("Error al guardar el registro con marca de tiempo.");
+            System.out.println(Colores.ROJO + "Error al guardar el registro con marca de tiempo.");
             e.printStackTrace();
         }
     }
@@ -68,7 +68,7 @@ public class GestorDeArchivos {
 
             scanner.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Archivo de registro no encontrado.");
+            System.out.println(Colores.ROJO + "Archivo de registro no encontrado.");
         }
     }
 }
