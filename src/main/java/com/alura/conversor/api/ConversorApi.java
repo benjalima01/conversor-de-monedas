@@ -1,7 +1,7 @@
-package com.alura.conversor;
+package com.alura.conversor.api;
 
+import com.alura.conversor.modelos.Moneda;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
