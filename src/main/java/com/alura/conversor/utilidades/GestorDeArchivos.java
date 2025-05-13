@@ -47,7 +47,7 @@ public class GestorDeArchivos {
             LocalDateTime ahora = LocalDateTime.now();
             String fechaFormateada = ahora.format(FORMATO_FECHA);
 
-            writer.write(Colores.NEGRITA + conversionRealizada + " | Fecha: " + fechaFormateada + '\n');
+            writer.write(conversionRealizada + " | Fecha: " + fechaFormateada + '\n');
             writer.close();
             System.out.println(Colores.VERDE + "Registro con marca de tiempo guardado." + Colores.RESET);
         } catch (Exception e) {
